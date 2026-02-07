@@ -31,3 +31,20 @@ for(let value of tools){
 for(let i=0;i<tools.length;i++){
     console.log("for loop: "+tools[i])
 }
+
+//while loop
+
+ let i=0
+while(i<5){
+    console.log(i)
+    i++
+}
+
+//do while loop
+
+do{
+
+console.log(i)
+i++
+
+}while(i<5)
