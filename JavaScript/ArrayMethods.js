@@ -109,7 +109,7 @@ console.log(fruits.slice(1,3)) //(start index,end index)
 //returns only the selected values
 console.log("=======SPLICE======")
 
-fruits.splice(0,2,"Jack Fruit","Grapes")
+fruits.splice(0,2,"Jack Fruit","Grapes") //(start index,delete count,items to add)
 console.log(fruits)
 
 //14)array.map() => transforms each element in the array based on the provided function and returns new array
@@ -167,6 +167,7 @@ console.log("============SORT=======")
 const sortNum=numbers.sort()
 console.log(sortNum)
 
+//localeCompare() is for strings only.
 const sortAscending=fruits.sort((a,b)=>a.localeCompare(b)) //ascending order
 console.log(sortAscending)
 const sortDescending=fruits.sort((a,b)=>b.localeCompare(a)) //descending order
