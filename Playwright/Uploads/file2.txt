@@ -1,0 +1,17 @@
+1️⃣ States of a Promise
+
+A Promise has 3 states:
+
+Pending ⏳
+
+Initial state
+
+Operation is still running.
+
+Fulfilled (Resolved) ✅
+
+Operation completed successfully.
+
+Rejected ❌
+
+Operation failed.

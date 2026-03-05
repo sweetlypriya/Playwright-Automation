@@ -1,0 +1,1 @@
+A Promise in JavaScript is an object that represents the result of an asynchronous operation (something that takes time like API calls, file reading, timers, etc.).
