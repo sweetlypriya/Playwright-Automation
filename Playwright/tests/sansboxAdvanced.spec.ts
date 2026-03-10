@@ -212,7 +212,7 @@ test.describe('Interactive Playwright Sandbox Advanced', () => {
         test('TC_10 Navigation Link', async ({ page }) => {
             await page.goto('https://playwright-mastery-academy-app.vercel.app/practice/sandbox-advanced')
 
-            //Navigation Link- when link take some time to open the url use waitForURL
+            //waitForURL- when link take some time to open the url use waitForURL
             await page.getByTestId('wait-navigation-link').click()
             await page.waitForURL('https://playwright-mastery-academy-app.vercel.app/practice/popup?source=waitfornavigation')
             await expect(page.getByText('Popup Opened Successfully')).toBeVisible()
@@ -221,13 +221,110 @@ test.describe('Interactive Playwright Sandbox Advanced', () => {
         test('TC_11 Trigger API response', async ({ page }) => {
             await page.goto('https://playwright-mastery-academy-app.vercel.app/practice/sandbox-advanced')
 
-            //Trigger API response - to wait until request sent and response received
+            //waitForResponse - to wait until request sent and response get received
             await page.getByTestId('wait-response-btn').click()
-            await page.waitForResponse('https://playwright-mastery-academy-app.vercel.app/api/practice/waits-status')
+            await page.waitForResponse('https://playwright-mastery-academy-app.vercel.app/api/practice/waits-status') //url from network->headers->request URL
             await expect(page.getByText('Trigger API Response Completed')).toBeVisible()
 
         })
+        test('TC_11 WaitFor and waitForSelector Commantd',async({page})=>{
+            await page.goto('https://playwright-mastery-academy-app.vercel.app/practice/sandbox-advanced')
 
+            //waitFor - will wait for the element to be visible
+            //state:visible
+            await page.getByTestId('wait-response-btn').click()
+            await page.getByText('Trigger API Response Completed').waitFor({state:'visible'})
+            await expect(page.getByText('Trigger API Response Completed')).toBeVisible()
+
+            //state:hidden-locator hidden in DOM should not be visible
+            //state:attached-locator exist in DOM
+            //state:detached-locator should not exist in DOM and should not be visible
+
+            //waitForSelector - wait till the locator is visible
+            //we can use only xpath/css not playwright locators
+            await page.waitForSelector('//div[contains(text(),"Trigger API Response Completed")]')
+            await expect(page.getByText('Trigger API Response Completed')).toBeVisible()
+
+        })
+        test('TC_12 waitForLoadState waits',async({page})=>{
+            await page.goto('https://playwright-mastery-academy-app.vercel.app/practice/sandbox-advanced')
+
+            //load - wait for DOM ready ,images loaded
+            //speed - medium
+            await page.getByTestId('wait-loadstate-practice-load-btn').click()
+            await page.waitForLoadState('load')
+            await expect(page.getByText('Test load State: Completed')).toBeVisible()
+
+            //domcontentloaded - check only DOM is ready
+            //speed - fast
+            await page.getByTestId('wait-loadstate-practice-dom-btn').click()
+            await page.waitForLoadState('domcontentloaded')
+            await expect(page.getByText('Test DOMContentLoaded State: Completed')).toBeVisible()
+
+            //networkidle - checks DOM ready , images loaded ,API calls finished
+            //speed - slow compared to other two
+            await page.getByTestId('wait-loadstate-practice-networkidle-btn').click()
+            await page.waitForLoadState('networkidle')
+            await expect(page.getByText('Test Network Idle State: Completed after 5.5s')).toBeVisible()
+        })
+
+    })
+    test('TC 13 Mouse Actions',async({page})=>{
+        await page.goto('https://playwright-mastery-academy-app.vercel.app/practice/sandbox-advanced')
+
+        //mouse DOWN
+        await page.getByTestId('mouse-downup-target').click()
+        await page.mouse.down()
+        await expect(page.getByText('Mouse down detected.')).toBeVisible()
+
+        //Mouse UP
+        await page.getByTestId('mouse-downup-target').click()
+        await page.mouse.up()
+        await expect(page.getByText('Mouse down + up detected.')).toBeVisible()
+
+        //ScrollIntoViewIfNeeded - it will scroll the page till the locator given is found
+        await page.getByTestId('mouse-wheel-target').scrollIntoViewIfNeeded()
+
+        //Right click on the mouse
+        await page.getByTestId('mouse-rightclick-target').click({button:'right'})
+        //button:left click,middle click,right click
+        await expect(page.getByText('Right click detected on target.')).toBeVisible()
+
+        //to scroll down
+        await page.getByTestId('mouse-wheel-target').click()
+        await page.mouse.wheel(0,300)
+        //to scroll up
+        await page.mouse.wheel(0,-300)
+    })
+    test('TC_14 Force Actions',async({page})=>{
+
+        await page.goto('https://playwright-mastery-academy-app.vercel.app/practice/sandbox-advanced')
+
+        //forcrfully it will do the following actions
+        //before doing the action it will checks: 
+         // 1)attached to DOM
+         // 2)Visible
+         // 3)Stable  4)Enable 
+         // 5)not covered by another element
+
+        await page.getByTestId('popup-right-click-link').click({force:true})
+        await page.getByTestId('popup-right-click-link').dblclick({force:true})
+        await page.getByTestId('popup-right-click-link').hover({force:true})
+        await page.getByTestId('popup-right-click-link').check({force:true})
+        await page.getByTestId('popup-right-click-link').uncheck({force:true})
+
+    })
+    test('TC_15 Screenshots',async({page})=>{
+        await page.goto('https://playwright-mastery-academy-app.vercel.app/practice/sandbox-advanced')
+
+        //1)Taking the element screenshot
+        await page.getByTestId('wait-result-navigation').screenshot({path:'/Users/sweetlypriya/Documents/Playwright Automation Class/Playwright-Automation/Playwright/Screenshots/element.png'})
+
+        //2)Taking the page screenshot
+        await page.screenshot({path:'/Users/sweetlypriya/Documents/Playwright Automation Class/Playwright-Automation/Playwright/Screenshots/page.png'})
+
+        //3)Taking full page screenshot
+        await page.screenshot({path:'/Users/sweetlypriya/Documents/Playwright Automation Class/Playwright-Automation/Playwright/Screenshots/fullpage.png',fullPage:true})
     })
 
 
