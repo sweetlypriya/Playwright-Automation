@@ -291,7 +291,7 @@ test.describe('Interactive Playwright Sandbox Advanced', () => {
         await expect(page.getByText('Right click detected on target.')).toBeVisible()
 
         //to scroll down
-        await page.getByTestId('mouse-wheel-target').click()
+        await page.getByTestId('mouse-wheel-target').hover()
         await page.mouse.wheel(0,300)
         //to scroll up
         await page.mouse.wheel(0,-300)
