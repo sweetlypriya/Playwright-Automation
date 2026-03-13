@@ -29,6 +29,9 @@ const automationTool={
     console.log(automationTool['age'])
     console.log(automationTool['otherTools'][0])
 
+    automationTool.language='Javascript' //add new value to object
+    automationTool.age=29 //modify the existing value
+
 //3)function-reusable
 
 console.log("=========FUNCTION DATATYPE=========")
