@@ -1,7 +1,7 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { CommonPage } from "./common";
 import { GenericUtils } from "../Utils/genericutils";
-import { log } from "node:console";
+
 
 export class RolesPage extends CommonPage {
 
@@ -51,6 +51,12 @@ export class RolesPage extends CommonPage {
         await this.clickAction(this.page.getByRole('button', { name: 'Apply' }))
         await this.assertion(this.page.getByText(`${inputValue}`, { exact: true }),'Visible')
     }
+
+    async createNewDuplicateRoleAndVerify(){
+        
+    }
+
+
 
 
 }

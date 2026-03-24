@@ -43,8 +43,6 @@ test.describe('Roles Page TestCases', () => {
         await roles.clickAddButton()
         await roles.verifyAddApplicationRole()
         await roles.createNewRoleAndVerifyByFilter()
-
-
     })
 
 
