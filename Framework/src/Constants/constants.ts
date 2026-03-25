@@ -1,0 +1,1 @@
+export const newClaimsSteps=['New Claim','Insured(s)','Claimant','Trade']

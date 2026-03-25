@@ -1,5 +1,7 @@
 import { expect, Locator, Page } from "@playwright/test"
 
+//generic utils to store inbuilt playwright functions
+
 export class GenericUtils {
     page: Page
 
@@ -7,16 +9,20 @@ export class GenericUtils {
         this.page = page
     }
 
-    async goToUrl(url:string){
+    async goToUrl(url: string) {
         await this.page.goto(url)
     }
 
-    async clickAction(locator:Locator){
+    async clickAction(locator: Locator) {
         await locator.click()
     }
 
-    async inputText(locator:Locator,value:string){
+    async inputText(locator: Locator, value: string) {
         await locator.fill(value)
+    }
+
+    async checkCheckBox(locator:Locator){
+        await locator.check()
     }
 
     async waitForElements(locator: Locator, state: string) {
@@ -34,33 +40,33 @@ export class GenericUtils {
     async assertion(locator: Locator, assert: string) {
         if (assert = 'Visible') {
             await expect(locator).toBeVisible()
-        }else if(assert='Attached'){
+        } else if (assert = 'Attached') {
             await expect(locator).toBeAttached()
-        }else if(assert='Checked'){
+        } else if (assert = 'Checked') {
             await expect(locator).toBeChecked()
-        }else if(assert='Defined'){
+        } else if (assert = 'Defined') {
             await expect(locator).toBeDefined()
-        }else if(assert='Disabled'){
+        } else if (assert = 'Disabled') {
             await expect(locator).toBeDisabled()
-        }else if(assert='Editable'){
+        } else if (assert = 'Editable') {
             await expect(locator).toBeEditable()
-        }else if(assert='Empty'){
+        } else if (assert = 'Empty') {
             await expect(locator).toBeEmpty()
-        }else if(assert='Enabled'){
+        } else if (assert = 'Enabled') {
             await expect(locator).toBeEnabled()
-        }else if(assert='Falsy'){
+        } else if (assert = 'Falsy') {
             await expect(locator).toBeFalsy()
-        }else if(assert='Focused'){
+        } else if (assert = 'Focused') {
             await expect(locator).toBeFocused()
-        }else if(assert='Hidden'){
+        } else if (assert = 'Hidden') {
             await expect(locator).toBeHidden()
-        }else if(assert='InViewport'){
+        } else if (assert = 'InViewport') {
             await expect(locator).toBeInViewport()
-        }else if(assert='Null'){
+        } else if (assert = 'Null') {
             await expect(locator).toBeNull()
-        }else if(assert='Truthy'){
+        } else if (assert = 'Truthy') {
             await expect(locator).toBeTruthy()
-        }else if(assert='Undefined'){
+        } else if (assert = 'Undefined') {
             await expect(locator).toBeUndefined()
         }
     }

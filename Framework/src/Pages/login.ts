@@ -10,8 +10,8 @@ export class LoginPage extends CommonPage {
     constructor(page: Page) {
         super(page)
         this.page = page
-        this.userName=process.env.USER_NAME||''
-        this.passWord=process.env.PASS_WORD||''
+        this.userName = process.env.USER_NAME || ''
+        this.passWord = process.env.PASS_WORD || ''
     }
 
     async userLogin() {

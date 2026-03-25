@@ -2,29 +2,30 @@ import { test } from '../src/Config/fixtures'
 import { HomePage } from '../src/Pages/home'
 import { RolesPage } from '../src/Pages/roles'
 
+//we import {test} from fixtures instead of @playwright/test .so we can access the custom page fixture
+
 test.describe('Roles Page TestCases', () => {
-    rolesPage: RolesPage
+
+    //the instances have been created once and it will run before each test case.it avoids repeatation of instance creation in every testcase
+
+    let home: HomePage
+    let roles: RolesPage
     test.beforeEach(async ({ pageWithLogin }) => {
-        const rolesPage = new RolesPage(pageWithLogin)
-    })
-    test('TC_1 Verify Roles page loads successfully', async ({pageWithLogin}) => {
+        home = new HomePage(pageWithLogin)
+        roles = new RolesPage(pageWithLogin)
+    });
+    test('TC_1 Verify Roles page loads successfully', async () => {
 
-        const home = new HomePage(pageWithLogin)
         await home.verifyHomePage()
-        await home.navigateViaDashboard()
-
-        const roles = new RolesPage(pageWithLogin)
+        await home.navigateViaDashboard('Administrator', 'Roles')
         await roles.verifyLoadingGetsDetached()
         await roles.verifyRolesPageLoaded()
     })
 
-    test('TC_2 Verify user can open Add Application Role popup', async ({pageWithLogin}) => {
+    test('TC_2 Verify user can open Add Application Role popup', async () => {
 
-        const home = new HomePage(pageWithLogin)
         await home.verifyHomePage()
-        await home.navigateViaDashboard()
-
-        const roles = new RolesPage(pageWithLogin)
+        await home.navigateViaDashboard('Administrator', 'Roles')
         await roles.verifyLoadingGetsDetached()
         await roles.verifyRolesPageLoaded()
         await roles.clickAddButton()
@@ -32,12 +33,10 @@ test.describe('Roles Page TestCases', () => {
 
     })
 
-    test('TC_3 Verify user can create a new role', async ({ pageWithLogin }) => {
-        const home = new HomePage(pageWithLogin)
-        await home.verifyHomePage()
-        await home.navigateViaDashboard()
+    test('TC_3 Verify user can create a new role', async () => {
 
-        const roles = new RolesPage(pageWithLogin)
+        await home.verifyHomePage()
+        await home.navigateViaDashboard('Administrator', 'Roles')
         await roles.verifyLoadingGetsDetached()
         await roles.verifyRolesPageLoaded()
         await roles.clickAddButton()
@@ -45,6 +44,16 @@ test.describe('Roles Page TestCases', () => {
         await roles.createNewRoleAndVerifyByFilter()
     })
 
+    test('TC_4 Verify role cannot be created with duplicate name', async () => {
+
+        await home.verifyHomePage()
+        await home.navigateViaDashboard('Administrator', 'Roles')
+        await roles.verifyLoadingGetsDetached()
+        await roles.verifyRolesPageLoaded()
+        await roles.clickAddButton()
+        await roles.verifyAddApplicationRole()
+        await roles.createNewDuplicateRoleAndVerify()
+    })
 
 
 })

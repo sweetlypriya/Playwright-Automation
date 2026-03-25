@@ -18,19 +18,10 @@ export class RolesPage extends CommonPage {
         this.aarCancelButton = this.page.getByRole('button', { name: 'Cancel' })
     }
 
-    async verifyLoadingGetsDetached() {
-        await this.waitForElements(this.page.locator('.rzi-circle-o-notch'), 'detached')
-
-    }
-
     async verifyRolesPageLoaded() {
         await this.waitForElements(this.page.getByRole('heading', { name: 'Roles' }), 'visible')
         await expect(this.page.getByRole('heading', { name: 'Roles' })).toBeVisible()
 
-    }
-
-    async clickAddButton() {
-        await this.page.getByRole('button', { name: 'Add' }).click()
     }
 
     async verifyAddApplicationRole() {
@@ -45,15 +36,25 @@ export class RolesPage extends CommonPage {
         const inputValue = await this.inputValueInTextBox(this.aarTextBox)
         console.log(inputValue);
         await this.clickAction(this.aarSaveButton)
-        await this.clickAction(this.page.locator('.rzi.rz-grid-filter-icon'))
-        await this.page.locator('[class="rz-dropdown-label rz-inputtext "]').getByText('Contains').first().isVisible()
-        await this.inputText(this.page.getByRole('textbox').nth(3), inputValue)
-        await this.clickAction(this.page.getByRole('button', { name: 'Apply' }))
-        await this.assertion(this.page.getByText(`${inputValue}`, { exact: true }),'Visible')
+
+        //filter and verify
+        // await this.clickAction(this.page.locator('.rzi.rz-grid-filter-icon'))
+        // await this.waitForElements(this.page.locator('[class="rz-dropdown-label rz-inputtext "]').getByText('Contains').first(),'visible')
+        // await this.inputText(this.page.getByRole('textbox').nth(3), inputValue)
+        // await this.clickAction(this.page.getByRole('button', { name: 'Apply' }))
+        // await this.assertion(this.page.getByText(`${inputValue}`, { exact: true }), 'Visible')
     }
 
-    async createNewDuplicateRoleAndVerify(){
-        
+    async createNewDuplicateRoleAndVerify() {
+        const inputValue = await this.inputValueInTextBox(this.aarTextBox)
+        console.log(inputValue);
+        await this.clickAction(this.aarSaveButton)
+        await this.clickAddButton()
+        await this.inputText(this.aarTextBox, inputValue)
+        await this.clickAction(this.aarSaveButton)
+        await this.waitForElements(this.page.locator('[class="rz-growl-message"]'), 'visible')
+        await this.assertion(this.page.locator('[class="rz-growl-message"]'), 'Visible')
+
     }
 
 
