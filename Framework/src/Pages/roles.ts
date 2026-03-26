@@ -20,8 +20,8 @@ export class RolesPage extends CommonPage {
 
     async verifyRolesPageLoaded() {
         await this.waitForElements(this.page.getByRole('heading', { name: 'Roles' }), 'visible')
-        await expect(this.page.getByRole('heading', { name: 'Roles' })).toBeVisible()
-
+        await this.assertion(this.page.getByRole('heading', { name: 'Roles' }),'Visible')
+        await this.assertion(this.page.locator('[class="rz-column-title-content"]').first(),'Visible')
     }
 
     async verifyAddApplicationRole() {

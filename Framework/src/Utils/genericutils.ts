@@ -21,11 +21,11 @@ export class GenericUtils {
         await locator.fill(value)
     }
 
-    async checkCheckBox(locator:Locator){
+    async checkCheckBox(locator: Locator) {
         await locator.check()
     }
 
-    async waitForElements(locator: Locator, state: string) {
+    async waitForElements(locator: Locator, state: string, timeout?: number) {
         if (state = 'visible') {
             await locator.waitFor({ state: "visible" })
         } else if (state = 'detached') {
@@ -34,6 +34,8 @@ export class GenericUtils {
             await locator.waitFor({ state: "attached" })
         } else if (state = 'hidden') {
             await locator.waitFor({ state: "hidden" })
+        }else if(timeout){
+            await locator.waitFor({ state: "visible" ,timeout:timeout})
         }
     }
 

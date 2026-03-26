@@ -1,6 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 import { CommonPage } from "./common";
 import testData from "../TestData/testData.json"
+import {usersHeadings} from "../Constants/constants"
 
 const { passWord, confirmPassword } = testData
 
@@ -27,6 +28,9 @@ export class UsersPage extends CommonPage {
     async verifyUsersPageLoaded() {
         await this.waitForElements(this.usersHeading, 'visible')
         await this.assertion(this.usersHeading, 'Visible')
+        for(const heading of usersHeadings){
+            await this.assertion(this.page.locator('[class="rz-column-title-content"]').getByText(heading).first(),'Visible')
+        }
         await this.clickAddButton()
     }
 

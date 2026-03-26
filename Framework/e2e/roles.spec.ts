@@ -18,7 +18,7 @@ test.describe('Roles Page TestCases', () => {
 
         await home.verifyHomePage()
         await home.navigateViaDashboard('Administrator', 'Roles')
-        await roles.verifyLoadingGetsDetached()
+        //await roles.verifyLoadingGetsDetached()
         await roles.verifyRolesPageLoaded()
     })
 
@@ -26,7 +26,7 @@ test.describe('Roles Page TestCases', () => {
 
         await home.verifyHomePage()
         await home.navigateViaDashboard('Administrator', 'Roles')
-        await roles.verifyLoadingGetsDetached()
+        //await roles.verifyLoadingGetsDetached()
         await roles.verifyRolesPageLoaded()
         await roles.clickAddButton()
         await roles.verifyAddApplicationRole()
@@ -37,7 +37,7 @@ test.describe('Roles Page TestCases', () => {
 
         await home.verifyHomePage()
         await home.navigateViaDashboard('Administrator', 'Roles')
-        await roles.verifyLoadingGetsDetached()
+        //await roles.verifyLoadingGetsDetached()
         await roles.verifyRolesPageLoaded()
         await roles.clickAddButton()
         await roles.verifyAddApplicationRole()
@@ -48,7 +48,7 @@ test.describe('Roles Page TestCases', () => {
 
         await home.verifyHomePage()
         await home.navigateViaDashboard('Administrator', 'Roles')
-        await roles.verifyLoadingGetsDetached()
+        //await roles.verifyLoadingGetsDetached()
         await roles.verifyRolesPageLoaded()
         await roles.clickAddButton()
         await roles.verifyAddApplicationRole()

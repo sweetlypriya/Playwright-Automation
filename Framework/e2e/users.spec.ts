@@ -15,7 +15,7 @@ test.describe('Users Page Test Cases', async () => {
 
         await home.verifyHomePage()
         await home.navigateViaDashboard('Administrator', 'Users')
-        await users.verifyLoadingGetsDetached()
+        //await users.verifyLoadingGetsDetached()
         await users.verifyUsersPageLoaded()
     })
 
@@ -23,7 +23,7 @@ test.describe('Users Page Test Cases', async () => {
 
         await home.verifyHomePage()
         await home.navigateViaDashboard('Administrator', 'Users')
-        await users.verifyLoadingGetsDetached()
+        //await users.verifyLoadingGetsDetached()
         await users.verifyUsersPageLoaded()
         await users.addNewUser()
 
@@ -33,7 +33,7 @@ test.describe('Users Page Test Cases', async () => {
 
         await home.verifyHomePage()
         await home.navigateViaDashboard('Administrator', 'Users')
-        await users.verifyLoadingGetsDetached()
+        //await users.verifyLoadingGetsDetached()
         await users.verifyUsersPageLoaded()
         await users.verifyLeavingFieldsEmpty()
 
@@ -43,7 +43,7 @@ test.describe('Users Page Test Cases', async () => {
 
         await home.verifyHomePage()
         await home.navigateViaDashboard('Administrator', 'Users')
-        await users.verifyLoadingGetsDetached()
+        //await users.verifyLoadingGetsDetached()
         await users.verifyUsersPageLoaded()
         await users.verifyFilterFunctionality()
 

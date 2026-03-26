@@ -17,7 +17,7 @@ export class CommonPage extends GenericUtils {
     }
 
     async navigateViaDashboard(parent: string, child?: string) {
-        await this.clickAction(this.page.getByText(parent))
+        await this.clickAction(this.page.getByText(parent).last())
         if (child) {
             await this.clickAction(this.page.locator('[class="rz-navigation-item-text"]').getByText(child).last())
         }
