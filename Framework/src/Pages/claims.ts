@@ -48,12 +48,7 @@ export class ClaimsPage extends CommonPage {
         console.log(registrantName);
         const registeredNameValue=this.registeredName.inputValue()
         console.log(registeredNameValue);
-        
-
-
-        
-
-
+    
     }
     async fillAddInsuredFields(){
         
