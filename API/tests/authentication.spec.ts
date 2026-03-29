@@ -11,9 +11,10 @@ test.describe('Authentications',async()=>{
     })
 
     test('Bearer Token',async({request})=>{
+        const bearerToken=process.env.BEARER_TOKEN;
         const response=await request.get('https://api.github.com/users/repos',{
             headers:{
-                Authorization:'Bearer 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'
+                Authorization:`Bearer ${bearerToken}`
             }
         })
         console.log(await response.json())
@@ -21,9 +22,10 @@ test.describe('Authentications',async()=>{
     })
 
     test('API Key',async({request})=>{
+        const apiKey=process.env.API_KEY;
         const response=await request.get('https://aistudio.google.com/app/projects/432962422628',{
             headers:{
-                'x-api-key':'AIzaSyBQAiAdk9N5UA4HP-X_RQ0zQ3K4O9pQFPU'
+                'x-api-key':apiKey!
             }
         })
         console.log(await response.json())
