@@ -1,0 +1,102 @@
+{
+  "responseCode": 200,
+  "products": [
+    {
+      "id": "1",
+      "name": "Blue Top",
+      "price": "Rs. 500",
+      "brand": "Polo",
+      "category": {
+        "usertype": {
+          "usertype": "Women"
+        },
+        "category": "Tops"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Men Tshirt",
+      "price": "Rs. 400",
+      "brand": "H&M",
+      "category": {
+        "usertype": {
+          "usertype": "Men"
+        },
+        "category": "Tshirts"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Sleeveless Dress",
+      "price": "Rs. 1000",
+      "brand": "Madame",
+      "category": {
+        "usertype": {
+          "usertype": "Women"
+        },
+        "category": "Dress"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Stylish Dress",
+      "price": "Rs. 1500",
+      "brand": "Madame",
+      "category": {
+        "usertype": {
+          "usertype": "Women"
+        },
+        "category": "Dress"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Winter Top",
+      "price": "Rs. 600",
+      "brand": "Mast & Harbour",
+      "category": {
+        "usertype": {
+          "usertype": "Women"
+        },
+        "category": "Tops"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Summer White Top",
+      "price": "Rs. 400",
+      "brand": "H&M",
+      "category": {
+        "usertype": {
+          "usertype": "Women"
+        },
+        "category": "Tops"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Madame Top For Women",
+      "price": "Rs. 1000",
+      "brand": "Madame",
+      "category": {
+        "usertype": {
+          "usertype": "Women"
+        },
+        "category": "Tops"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Fancy Green Top",
+      "price": "Rs. 700",
+      "brand": "Polo",
+      "category": {
+        "usertype": {
+          "usertype": "Women"
+        },
+        "category": "Tops"
+      }
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
