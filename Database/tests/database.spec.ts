@@ -10,6 +10,7 @@ test('Connect to database and run query',async({page})=>{
     const rows=result.rows
     console.log(rows);
 
+    //taking products one by one and verifying in UI if it is visible or not
     for(const product of rows){
         await expect(page.locator('//div[@class="single-products"]').getByText(product.product_name).first()).toBeVisible()
     }
