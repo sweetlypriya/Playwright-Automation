@@ -31,5 +31,17 @@ test.describe('Authentications',async()=>{
         console.log(await response.json())
 
     })
+
+     test('API Key using Params',async({request})=>{
+        const apiKey=process.env.API_KEY;
+        const response=await request.get('https://aistudio.google.com/app/projects/432962422628',{
+            params:{
+                q:'delhi',//query param
+                appid:apiKey!
+            }
+        })
+        console.log(await response.json())
+
+    })
     
 })
