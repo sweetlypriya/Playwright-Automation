@@ -18,5 +18,3 @@ test('validate the carts in automationpractice',async({page,request})=>{
    
     
 })
-
-
