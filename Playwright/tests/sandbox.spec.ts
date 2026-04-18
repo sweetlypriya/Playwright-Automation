@@ -95,7 +95,7 @@ test.describe('Interactive Playwright Sandbox Basic', () => {
         const allInnerText = await page.getByTestId('extract-list').allInnerTexts()
         console.log('allInnerText==>' + allInnerText)
 
-        //textContent - extract all list of child texts from the inside of given parent tag
+        //allTextContents - extract all list of child texts from the inside of given parent tag
         const allTextContent = await page.getByTestId('extract-list').allTextContents()
         console.log('allTextContent==>' + allTextContent)
 
