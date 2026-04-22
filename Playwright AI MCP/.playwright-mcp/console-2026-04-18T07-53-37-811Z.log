@@ -1,0 +1,10 @@
+[     415ms] [WARNING] [2026-04-18T07:53:38.225Z] Warning: Error from HTTP request. TypeError: Failed to fetch. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[     415ms] [WARNING] [2026-04-18T07:53:38.225Z] Warning: Error from HTTP request. TypeError: Failed to fetch. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[     415ms] [ERROR] [2026-04-18T07:53:38.225Z] Error: Connection disconnected with error 'TypeError: Failed to fetch'. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[     416ms] [WARNING] [2026-04-18T07:53:38.226Z] Warning: Failed to deliver completion notification for render '22'. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[    1336ms] [INFO] [2026-04-18T07:53:39.146Z] Information: Normalizing '_blazor' to 'https://testcms.reco-claims.ca/_blazor'. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[    2234ms] [WARNING] [2026-04-18T07:53:40.045Z] Warning: Failed to connect via WebSockets, using the Long Polling fallback transport. This may be due to a VPN or proxy blocking the connection. To troubleshoot this, visit https://aka.ms/blazor-server-using-fallback-long-polling. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[   97346ms] [WARNING] [2026-04-18T07:55:15.156Z] Warning: Error from HTTP request. TypeError: Failed to fetch. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[   97346ms] [ERROR] [2026-04-18T07:55:15.157Z] Error: Connection disconnected with error 'TypeError: Failed to fetch'. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[   98246ms] [INFO] [2026-04-18T07:55:16.056Z] Information: Normalizing '_blazor' to 'https://testcms.reco-claims.ca/_blazor'. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[   99187ms] [WARNING] [2026-04-18T07:55:16.998Z] Warning: Failed to connect via WebSockets, using the Long Polling fallback transport. This may be due to a VPN or proxy blocking the connection. To troubleshoot this, visit https://aka.ms/blazor-server-using-fallback-long-polling. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0

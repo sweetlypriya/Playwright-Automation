@@ -1,0 +1,59 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - button "menu" [ref=e7] [cursor=pointer]:
+        - generic [ref=e8]: menu
+      - generic [ref=e9]: RECO CMS
+      - 'textbox "Enter Exact Claim #" [ref=e10]'
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic:
+          - textbox
+        - generic [ref=e13]: Most Recent Claims
+        - generic [ref=e15]: arrow_drop_down
+      - list [ref=e16]:
+        - listitem [ref=e17]:
+          - generic [ref=e19] [cursor=pointer]:
+            - img [ref=e21]
+            - generic [ref=e22]: keyboard_arrow_down
+  - generic [ref=e23]:
+    - heading "Page not found" [level=1] [ref=e24]
+    - paragraph [ref=e25]: Sorry, but there's nothing here!
+  - list [ref=e27]:
+    - listitem [ref=e28]:
+      - link "Claims" [ref=e30] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e31]: Claims
+    - listitem [ref=e32]:
+      - link "Upload Invoice" [ref=e34] [cursor=pointer]:
+        - /url: upload-invoice
+        - generic [ref=e35]: Upload Invoice
+    - listitem [ref=e36]:
+      - link "Service Provider" [ref=e38] [cursor=pointer]:
+        - /url: /service-providers
+        - generic [ref=e39]: Service Provider
+    - listitem [ref=e40]:
+      - link "Brokerage" [ref=e42] [cursor=pointer]:
+        - /url: brokerage
+        - generic [ref=e43]: Brokerage
+    - listitem [ref=e44]:
+      - generic [ref=e46] [cursor=pointer]:
+        - generic [ref=e47]: Reports
+        - generic [ref=e48]: keyboard_arrow_down
+    - listitem [ref=e49]:
+      - link "Claimant Solicitor" [ref=e51] [cursor=pointer]:
+        - /url: claimant-solicitor
+        - generic [ref=e52]: Claimant Solicitor
+    - listitem [ref=e53]:
+      - generic [ref=e55] [cursor=pointer]:
+        - generic [ref=e56]: My Profile
+        - generic [ref=e57]: keyboard_arrow_down
+    - listitem [ref=e58]:
+      - generic [ref=e60] [cursor=pointer]:
+        - generic [ref=e61]: Administrator
+        - generic [ref=e62]: keyboard_arrow_down
+    - listitem [ref=e63]:
+      - link "Registrants" [ref=e65] [cursor=pointer]:
+        - /url: registrants/false
+        - generic [ref=e66]: Registrants
+  - generic [ref=e68]: Reco CMS , Copyright Ⓒ 2025

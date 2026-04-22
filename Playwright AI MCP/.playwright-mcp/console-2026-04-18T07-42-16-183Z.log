@@ -1,0 +1,4 @@
+[     370ms] [WARNING] [2026-04-18T07:42:16.552Z] Warning: Error from HTTP request. TypeError: Failed to fetch. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[     370ms] [ERROR] [2026-04-18T07:42:16.553Z] Error: Connection disconnected with error 'TypeError: Failed to fetch'. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[    1233ms] [INFO] [2026-04-18T07:42:17.416Z] Information: Normalizing '_blazor' to 'https://testcms.reco-claims.ca/_blazor'. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
+[    2095ms] [WARNING] [2026-04-18T07:42:18.277Z] Warning: Failed to connect via WebSockets, using the Long Polling fallback transport. This may be due to a VPN or proxy blocking the connection. To troubleshoot this, visit https://aka.ms/blazor-server-using-fallback-long-polling. @ https://testcms.reco-claims.ca/_framework/blazor.server.js:0
