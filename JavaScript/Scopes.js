@@ -20,7 +20,7 @@ if (true) {
 
 //block
 if (true) {
-    var d = 40 //global scope
+    var d = 40 //not block but function scope variable
     let e = 50 //local scope
     const f = 60 //local scope
 
