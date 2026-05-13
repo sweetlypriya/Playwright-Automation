@@ -18,6 +18,7 @@ console.log("csv: "+JSON.stringify(csvData));
 //to access data from EXCEL
 //npm install xlsx
 const excelFile=XLSX.readFile('/Users/sweetlypriya/Documents/Playwright Automation Class/Playwright-Automation/Playwright/testdata/Book1.xlsx')
-const sheet=excelFile.Sheets['Sheet1']
+const sheetName=excelFile.SheetNames[0] //accessing the first sheet
+const sheet=excelFile.Sheets[sheetName]
 const excelData=XLSX.utils.sheet_to_json(sheet)
 console.log("excel"+JSON.stringify(excelData));
