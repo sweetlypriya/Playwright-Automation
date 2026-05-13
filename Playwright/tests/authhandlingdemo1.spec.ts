@@ -52,5 +52,4 @@ test.describe('Authentication handling to skip multiple logins', async () => {
         await page.close()
         await context.close()
     }))
-
 })
