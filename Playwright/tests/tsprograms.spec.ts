@@ -1,3 +1,56 @@
+//Duplicate Programs
+
+
+let str1:string='aabccde'
+
+//print the first non duplicate letter o/p:b
+let output1=str1.split('').find(x=>str1.indexOf(x)===str1.lastIndexOf(x))
+console.log('First non duplicate charactor from the string aabccde is : '+output1);
+
+//remove duplicates and print o/p: abcde
+let split=str1.split('')
+let output2=split.filter((x,index)=>split.indexOf(x)===index).join('')
+console.log('String after removing duplicates: '+output2);
+
+//print all non duplicate characters o/p:bde
+let output3=str1.split('').filter(x=>str1.indexOf(x)===str1.lastIndexOf(x)).join('')
+console.log('Non duplicate charactor from the string aabccde is : '+output3);
+
+//print all duplicate characters o/p:ac
+let output4=str1.split('').filter(x=>str1.indexOf(x)!==str1.lastIndexOf(x)).filter((x,index)=>split.indexOf(x)===index).join('')
+console.log('Duplicate charactor from the string aabccde is : '+output4);
+
+//print the 1st occurence 
+//Input: ["Apple", "Banana", "apple", "BANANA", "Orange", "Apple"]
+//Output: ["Apple", "Banana", "Orange"]
+
+function printFirstOccuranceOfDuplicates(){
+
+    let array:string[]=["bAnaNa","Apple", "Banana", "apple", "BANANA", "Orange", "Apple"]
+
+    //method 1
+    let result4=array.filter((item,index,arr)=>arr.findIndex(x=>item.toLowerCase()===x.toLowerCase())===index)
+    console.log(result4);
+
+    //method2
+    let set=new Set<string>()
+    let result5=array.filter(x=>{const lowerCase=x.toLowerCase()
+    if(set.has(lowerCase)){return false}
+    set.add(lowerCase)
+    return true
+})
+console.log(result5)   
+}
+printFirstOccuranceOfDuplicates()
+
+
+
+
+
+
+
+
+
 let str:string='%@1234%@'
 let num:number=12346578
 let stri:string='aabbcdde'
@@ -45,3 +98,11 @@ console.log(unique)
 console.log(result1)
 console.log(result2)
 console.log(result3)
+
+
+let duplArr:string[]=['HellO','hElLo','woRlD','heLLo','WoRlD']
+//o/p:[HellO,woRlD]
+
+let reslt4=duplArr.filter( (item,index,arr)=> arr.findIndex(x=>x.toLowerCase()===item.toLowerCase())===index)
+console.log(reslt4)
+
