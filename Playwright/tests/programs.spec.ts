@@ -278,14 +278,16 @@ reverseWordAndEachWords(input15)
 //Program 17
 function largestAndSecondLargestNumber(num: number[]) {
 
-    let largest = num[0]
-    let secondLargest = num[0]
+    let largest = 0
+    let secondLargest = 0
 
     for (let i = 0; i < num.length; i++) {
         if (num[i] > largest) {
             let temp = num[i]
             secondLargest = largest
             largest = temp
+        } else if (num[i] < largest && num[i] > secondLargest) {
+            secondLargest = num[i]
         }
     }
     console.log("largest: " + largest);
@@ -480,7 +482,7 @@ function sortStringsByLength(str: string[]) {
     }
     console.log(str);
 }
-let input25 = ["playwright", "java", "api", "selenium"]
+let input25 = ["playwright", "java", "api", "selenium"] //outpu:[ 'api', 'java', 'selenium', 'playwright' ]
 sortStringsByLength(input25)
 
 //Program 28
@@ -666,6 +668,19 @@ function findMissingNumber(str: number[]) {
 let input34 = [1, 2, 3, 5] //output: 4
 findMissingNumber(input34)
 
+//Program 40
+function findDuplicate(arr:number[]){
+    let result:number[]=[]
 
+    for(let i=0;i<arr.length;i++){
+        if((arr.indexOf(arr[i])!==arr.lastIndexOf(arr[i])) && !result.includes(arr[i])){
+            result.push(arr[i])
+        }
+    }
+    console.log(result);
+    
+}
+let input35=[1,2,2,3,4,4] //output:2,4
+findDuplicate(input35)
 
-
+//Program 41
